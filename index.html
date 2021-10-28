@@ -1,0 +1,18 @@
+<html>
+  <head> </head>
+  <body>
+    <input type="button" value="write" onclick="WriteFile()" />
+    <script>
+      function WriteFile () {
+        var filename = 'readme.txt'
+        var text = 'file writer ready'
+        var blob = new Blob([text], { type: 'text/plain' })
+        var link = document.createElement('a')
+        link.download = filename
+        link.innerHTML = 'Download File'
+        link.href = window.URL.createObjectURL(blob)
+        document.body.appendChild(link)
+      }
+    </script>
+  </body>
+</html>
